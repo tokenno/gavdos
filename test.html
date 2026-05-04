@@ -1,311 +1,483 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>savegavdos.net – Γαύδος: Κατεδαφίσεις & Αντίσταση</title>
-  <meta name="description" content="22/04/26: ΜΑΤ και αυθαίρετες κατεδαφίσεις καλυβιών στον Λαυρακά. Η Πρωτοβουλία Αθήνας για τη Γαύδο καταγγέλλει την πολιτική της εκμετάλλευσης – savegavdos.net" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>savegavdos.net – Καμία κατεδάφιση στην ελευθερία</title>
+  <meta name="description" content="22/4/2026: ΜΑΤ και αυθαίρετες κατεδαφίσεις καλυβιών στον Λαυρακά. Η Πρωτοβουλία Αθήνας για τη Γαύδο καταγγέλλει την πολιτική εκμετάλλευσης.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg-light:    #fefaf5;
-      --bg-paper:    #fcf7f0;
-      --card-bg:     #ffffff;
-      --text-dark:   #1e2a2e;
-      --text-mid:    #4a5b5e;
-      --text-soft:   #6c7a7d;
-      --border-light:#e6dfd7;
-      --accent:      #bc5a4c;
-      --accent-dark: #9b3e32;
-      --accent-soft: #e8bbb2;
-      --serif:       'Playfair Display', Georgia, serif;
-      --sans:        'IBM Plex Sans', sans-serif;
-      --mono:        'IBM Plex Mono', monospace;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #ffffff;
+      color: #1e2a2e;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.55;
+      scroll-behavior: smooth;
     }
-    html { scroll-behavior: smooth; }
-    body { background-color: var(--bg-light); color: var(--text-dark); font-family: var(--sans); font-size: 17px; line-height: 1.7; }
-
-    /* HEADER (lighter) */
-    header { background: #ffffff; border-bottom: 2px solid var(--accent); position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
-    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .site-logo { font-family: var(--serif); font-size: 1rem; font-weight: 800; color: var(--text-dark); text-decoration: none; line-height: 1.2; }
-    .site-logo em { display: block; font-family: var(--mono); font-style: normal; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-top: 2px; }
-    nav { display: flex; gap: 1.8rem; align-items: center; }
-    nav a { font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; transition: 0.2s; }
-    nav a:hover { color: var(--accent); }
-    nav a.cta { background: var(--accent); color: white; padding: 0.4rem 1rem; border-radius: 2rem; }
-    nav a.cta:hover { background: var(--accent-dark); color: white; }
-    .nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; }
-
-    /* URGENT (softer but visible) */
-    .urgent { background: var(--accent-soft); border-left: 6px solid var(--accent); }
-    .urgent-inner { max-width: 1200px; margin: 0 auto; padding: 0.8rem 2rem; display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
-    .urgent-badge { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; background: var(--accent); color: white; padding: 0.2rem 0.7rem; border-radius: 2rem; }
-    .urgent-text { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--text-dark); }
-    .urgent-link { font-family: var(--mono); font-size: 0.6rem; color: var(--accent-dark); text-decoration: underline; }
-
-    /* HERO (light, airy) */
-    .hero { background: linear-gradient(135deg, #fff7ef 0%, #fdf3e8 100%); display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh; }
-    .hero-left { padding: 5rem 3rem 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
-    .hero-stamp { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.75rem; }
-    .hero-stamp::before { content: ''; width: 2rem; height: 1.5px; background: var(--accent); }
-    .hero h1 { font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 900; line-height: 1.05; margin-bottom: 1.5rem; color: var(--text-dark); }
-    .hero h1 span { display: block; color: var(--accent); font-style: italic; }
-    .hero-deck { font-size: 1rem; font-weight: 350; line-height: 1.65; color: var(--text-mid); max-width: 480px; margin-bottom: 2rem; }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn { font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.8rem 1.8rem; text-decoration: none; transition: 0.2s; border-radius: 2rem; }
-    .btn-red { background: var(--accent); color: white; border: none; }
-    .btn-red:hover { background: var(--accent-dark); }
-    .btn-ghost { border: 1px solid var(--accent); color: var(--accent); background: transparent; }
-    .btn-ghost:hover { background: var(--accent); color: white; }
-    .hero-right { background: #f3ede5; display: flex; align-items: flex-end; padding: 2rem; position: relative; }
-    .hero-quote { background: rgba(255,255,240,0.85); padding: 1.8rem; border-left: 4px solid var(--accent); font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--text-dark); }
-    .ticker { background: var(--bg-paper); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 0.55rem 0; overflow: hidden; }
-    .ticker-track { display: flex; gap: 3rem; animation: tick 30s linear infinite; white-space: nowrap; }
-    .ticker-track span { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; color: var(--text-mid); text-transform: uppercase; }
-    @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-    /* LAYOUT UNIFORM */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .sec-head { border-bottom: 2px solid var(--border-light); padding-bottom: 0.7rem; margin-bottom: 2.5rem; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; }
-    .sec-kicker { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 0.3rem; }
-    .sec-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: var(--text-dark); }
-    .sec-more { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-soft); text-decoration: none; }
-    .sec-more:hover { color: var(--accent); }
-
-    /* FEATURED GRID */
-    .featured-sec { padding: 4rem 0; background: var(--bg-light); }
-    .featured-grid { display: grid; grid-template-columns: 5fr 3fr; gap: 3rem; align-items: start; }
-    .feat-kicker { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 0.8rem; }
-    .feat-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900; line-height: 1.2; margin-bottom: 1.2rem; }
-    .feat-lede { font-size: 1rem; font-weight: 380; color: var(--text-mid); border-left: 3px solid var(--accent); padding-left: 1.2rem; margin-bottom: 1.2rem; }
-    .feat-body { font-size: 0.93rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; }
-    .art-meta { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; color: var(--text-soft); border-top: 1px solid var(--border-light); padding-top: 0.8rem; margin: 1rem 0 1.2rem; display: flex; gap: 1.5rem; }
-    .fact-box { background: var(--bg-paper); padding: 1.8rem; border-radius: 16px; border: 1px solid var(--border-light); margin-bottom: 1.5rem; }
-    .fact-box-head { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.6rem; }
-    .fact-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-    .fact-list li { font-size: 0.82rem; line-height: 1.55; color: var(--text-dark); padding-left: 0.8rem; border-left: 2px solid var(--accent-soft); }
-    .quote-box { background: #ffffff; padding: 1.5rem; border-radius: 16px; border-left: 4px solid var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,0.03); }
-
-    /* POSTS (3 cards) */
-    .posts-sec { padding: 4rem 0; background: var(--bg-paper); }
-    .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .post-card { background: var(--card-bg); border-radius: 20px; padding: 1.6rem; transition: 0.2s; border: 1px solid var(--border-light); }
-    .post-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-    .card-img-ph { font-size: 2.2rem; margin-bottom: 0.8rem; }
-    .card-kicker { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.5rem; }
-    .post-card h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.7rem; }
-    .post-card p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 1rem; }
-    .card-date { font-family: var(--mono); font-size: 0.55rem; color: var(--text-soft); border-top: 1px solid var(--border-light); padding-top: 0.6rem; margin-top: auto; }
-
-    /* MANIFESTO (light background) */
-    .manifesto-sec { background: var(--bg-light); padding: 5rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
-    .manifesto-inner { max-width: 820px; margin: 0 auto; }
-    .manifesto-body { font-family: var(--serif); font-size: 1.15rem; font-style: italic; line-height: 1.75; color: var(--text-dark); margin-bottom: 2rem; background: #fffcf8; padding: 1.8rem; border-radius: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.02); }
-    .demands { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem; }
-    .demands li { display: flex; align-items: flex-start; gap: 1rem; font-size: 0.95rem; color: var(--text-dark); padding-bottom: 0.6rem; border-bottom: 1px solid var(--border-light); }
-    .demands li::before { content: '—'; color: var(--accent); font-family: var(--mono); font-weight: bold; }
-
-    /* EVENTS (removed refugee block) */
-    .events-sec { padding: 5rem 0; background: var(--bg-paper); }
-    .events-layout { display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; }
-    .event-item { display: grid; grid-template-columns: 70px 1fr; gap: 1.2rem; padding: 1rem 0; border-bottom: 1px solid var(--border-light); }
-    .ev-date { background: var(--card-bg); border: 1px solid var(--border-light); display: flex; flex-direction: column; align-items: center; justify-content: center; height: 66px; border-radius: 12px; }
-    .ev-date .day { font-family: var(--serif); font-size: 1.5rem; font-weight: 800; line-height: 1; color: var(--accent); }
-    .ev-date .mth { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); }
-    .ev-body h3 { font-family: var(--serif); font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; }
-    .ev-where { font-size: 0.75rem; color: var(--text-soft); margin-bottom: 0.3rem; }
-    .sidebar-blk { background: white; padding: 1.5rem; border-radius: 24px; border: 1px solid var(--border-light); margin-bottom: 1.8rem; }
-    .sidebar-blk-title { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
-    .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.06em; background: var(--bg-paper); padding: 0.2rem 0.7rem; border-radius: 2rem; color: var(--text-dark); text-decoration: none; border: 1px solid var(--border-light); }
-    .tag:hover { background: var(--accent); color: white; border-color: var(--accent); }
-
-    /* ACTIONS (3 steps) */
-    .actions-sec { padding: 5rem 0; background: var(--bg-light); }
-    .actions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .action-card { background: white; border-radius: 28px; padding: 2rem; transition: 0.2s; border: 1px solid var(--border-light); }
-    .action-card:hover { transform: translateY(-5px); }
-    .action-num { font-family: var(--serif); font-size: 2.5rem; font-weight: 900; color: var(--accent-soft); line-height: 1; margin-bottom: 1rem; }
-    .action-card h3 { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.7rem; }
-    .action-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.2rem; }
-    .action-lnk { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
-
-    /* GALLERY */
-    .gallery-sec { padding: 5rem 0 0; background: var(--bg-light); }
-    .gallery-scroll { display: flex; gap: 1rem; overflow-x: auto; margin-top: 2rem; padding-bottom: 0.5rem; }
-    .g-item { flex-shrink: 0; width: 260px; height: 170px; background: #e9e1d7; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; position: relative; cursor: pointer; transition: 0.2s; border: 1px solid var(--border-light); }
-    .g-item span { position: absolute; bottom: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); width: 100%; text-align: center; padding: 0.5rem; font-family: var(--mono); font-size: 0.6rem; color: white; border-radius: 0 0 20px 20px; opacity: 0; transition: 0.2s; }
-    .g-item:hover span { opacity: 1; }
-
-    /* FOOTER */
-    footer { background: #ffffff; border-top: 1px solid var(--border-light); padding: 3rem 0 2rem; margin-top: 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
-    .f-brand .site-logo { font-size: 1rem; }
-    .f-desc { font-size: 0.75rem; color: var(--text-soft); max-width: 260px; margin-top: 0.5rem; }
-    .f-col h4 { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 1rem; }
-    .f-col ul { list-style: none; }
-    .f-col a { font-size: 0.75rem; color: var(--text-mid); text-decoration: none; line-height: 1.9; }
-    .f-col a:hover { color: var(--accent); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light); font-family: var(--mono); font-size: 0.55rem; color: var(--text-soft); flex-wrap: wrap; gap: 1rem; }
-
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .featured-grid, .events-layout, .footer-grid, .actions-grid { grid-template-columns: 1fr; }
-      .posts-grid { grid-template-columns: 1fr 1fr; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
-    @media (max-width: 650px) {
-      .posts-grid { grid-template-columns: 1fr; }
-      nav { display: none; }
-      .nav-toggle { display: block; }
-      .hero-left { padding: 2rem 1.5rem; }
-      .container { padding: 0 1.2rem; }
+    /* header */
+    header {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      background: rgba(255,255,255,0.96);
+    }
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo a {
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -0.3px;
+      color: #c2410c;
+      font-family: 'Inter', sans-serif;
+    }
+    .logo span {
+      font-weight: 400;
+      font-size: 0.7rem;
+      color: #4b5563;
+      display: block;
+      letter-spacing: 0.2px;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    nav a {
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #2c3e2f;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: 0.2s;
+    }
+    nav a:hover { color: #c2410c; }
+    .btn-outline {
+      border: 1.5px solid #c2410c;
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      background: transparent;
+      color: #c2410c;
+    }
+    .btn-outline:hover { background: #c2410c; color: white; }
+    /* urgent banner */
+    .urgent {
+      background: #fee2e2;
+      border-left: 6px solid #c2410c;
+      padding: 0.9rem 1.5rem;
+    }
+    .urgent p {
+      max-width: 1100px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #7f1a1a;
+    }
+    /* hero */
+    .hero {
+      background: #fef9f4;
+      padding: 3rem 0 3rem;
+      border-bottom: 1px solid #f0e6df;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+    .hero-text { flex: 2; }
+    .hero-quote { flex: 1; background: #ffffffd9; padding: 1.5rem; border-radius: 1rem; border-left: 5px solid #c2410c; }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1e293b;
+    }
+    .hero h1 span { color: #c2410c; display: block; }
+    .hero-date {
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: #c2410c;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    .hero p { margin: 1rem 0 1.5rem; color: #2d3e40; max-width: 550px; }
+    .btn {
+      display: inline-block;
+      background: #c2410c;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.8rem;
+      transition: 0.2s;
+      border: none;
+    }
+    .btn-light {
+      background: #e7e5e4;
+      color: #1c2e2a;
+      margin-left: 0.8rem;
+    }
+    .btn-light:hover { background: #cdc9c6; }
+    .btn:hover { background: #9b3412; }
+    /* section headings */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.3px;
+    }
+    .section-sub {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #c2410c;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      height: 2px;
+      background: #f0e6df;
+    }
+    /* cards */
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .grid-2 { grid-template-columns: 2fr 1.5fr; }
+    .grid-3 { grid-template-columns: repeat(3,1fr); }
+    .card {
+      background: #ffffff;
+      border: 1px solid #eef2f0;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .fact-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .fact-list li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+      border-left: 3px solid #fcd5ce;
+      font-size: 0.9rem;
+    }
+    .badge {
+      background: #fef3c7;
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #b45309;
+      margin-bottom: 1rem;
+    }
+    .event-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #e7e5e4;
+      padding-bottom: 1rem;
+    }
+    .event-date {
+      background: #f1f5f9;
+      padding: 0.3rem 0.8rem;
+      border-radius: 1rem;
+      text-align: center;
+      font-weight: 700;
+      min-width: 65px;
+    }
+    .event-date .day { font-size: 1.2rem; }
+    .event-date .month { font-size: 0.7rem; text-transform: uppercase; }
+    .action-step {
+      background: #fafaf9;
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+    .action-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fed7aa;
+      margin-bottom: 0.5rem;
+    }
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding: 1rem 0 2rem;
+    }
+    .gallery img {
+      width: 260px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 1rem;
+      background: #e2e8f0;
+      border: 1px solid #e2e8f0;
+    }
+    footer {
+      background: #f8faf7;
+      border-top: 1px solid #e2e8f0;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .email-link {
+      font-family: monospace;
+      background: white;
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      border: 1px solid #ddd;
+    }
+    @media (max-width: 750px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      nav ul { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+      .hero h1 { font-size: 2rem; }
+      .header-flex { flex-direction: column; gap: 0.6rem; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="header-inner">
-    <a href="#" class="site-logo">savegavdos.net<em>Πρωτοβουλία Αθήνας για την Γαύδο</em></a>
+  <div class="header-flex">
+    <div class="logo">
+      <a href="#">savegavdos.net</a>
+      <span>Πρωτοβουλία Αθήνας για την Γαύδο</span>
+    </div>
     <nav>
-      <a href="#keimena">Καταγγελία</a>
-      <a href="#koinothta">Κοινότητα</a>
-      <a href="#events">Εκδηλώσεις</a>
-      <a href="#draseis">Δράσεις</a>
-      <a href="#draseis" class="cta">Συμμετοχή</a>
+      <ul>
+        <li><a href="#kataggelia">Καταγγελία</a></li>
+        <li><a href="#koinothta">Κοινότητα</a></li>
+        <li><a href="#theseis">Θέσεις</a></li>
+        <li><a href="#events">Εκδηλώσεις</a></li>
+        <li><a href="#draseis">Δράσεις</a></li>
+        <li><a href="#draseis" class="btn-outline">Συμμετοχή</a></li>
+      </ul>
     </nav>
-    <button class="nav-toggle">☰</button>
   </div>
 </header>
 
 <div class="urgent">
-  <div class="urgent-inner">
-    <span class="urgent-badge">22 ΑΠΡΙΛΙΟΥ 2026</span>
-    <span class="urgent-text">ΜΑΤ πλήρους εξάρτυσης + εισαγγελέας + συνεργείο Βασιλάκη Μιχαήλ κατεδάφισαν καλύβια (φυσικά υλικά, <5τμ) στον Λαυρακά & Αη Γιάννη. Δεν επιδόθηκε έγγραφο κατεδάφισης. Ο αδερφός της δημάρχου απείλησε και χειροδίκησε.</span>
-    <a href="#keimena" class="urgent-link">Πλήρες κείμενο →</a>
-  </div>
+  <p>🔴 22 Απριλίου 2026 – ΜΑΤ πλήρους εξάρτυσης, εισαγγελέας & συνεργείο κατεδάφισαν καλύβια από φυσικά υλικά στον Λαυρακά & Αη Γιάννη. Χωρίς έγγραφα κατεδάφισης, χωρίς διαβούλευση, με απειλές και χειροδικία από τον αδερφό της δημάρχου.</p>
 </div>
 
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-stamp">22/04/2026 · Κατεδάφιση κατοικιών</div>
-    <h1>Η κατεδάφιση<br/><span>της ελευθερίας</span></h1>
-    <p class="hero-deck">Αναντίστοιχη βία, απειλές, χειροδικία και σκουπίδια που άφησε το συνεργείο. Κανένα σχέδιο μετεγκατάστασης. Δεν είναι υπόθεση αυθαιρέτων – είναι πολιτική επιλογή.</p>
-    <div class="hero-btns">
-      <a href="#keimena" class="btn btn-red">Διάβασε την καταγγελία</a>
-      <a href="#draseis" class="btn btn-ghost">Στήριξε την κοινότητα</a>
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="hero-date">22/04/2026 · ΓΑΥΔΟΣ</div>
+      <h1>Η κατεδάφιση <span>της ελευθερίας</span></h1>
+      <p>Αναντίστοιχη βία σε ένα μικρό νησί. Δυσανάλογη επιχείρηση εναντίον ανθρώπων που ζουν εδώ και δεκαετίες σε αυτοσχέδιες καλύβες (<5τμ, φυσικά υλικά). Κανένα σχέδιο μετεγκατάστασης – μόνο εξουσία και αυθαιρεσία.</p>
+      <div>
+        <a href="#kataggelia" class="btn">Διάβασε την καταγγελία</a>
+        <a href="#draseis" class="btn btn-light">Πώς να βοηθήσεις</a>
+      </div>
+    </div>
+    <div class="hero-quote">
+      <p style="font-style: italic; font-weight: 500;">«Η οικολογία δεν είναι μόνο ανακύκλωση. Είναι η σχέση κοινότητας-τόπου που χτίζεται με τα χρόνια.»</p>
+      <p style="margin-top: 0.7rem; font-size: 0.8rem;">— Κοινότητα Λαυρακά</p>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-quote">«Η οικολογία δεν είναι μόνο ανακύκλωση. Είναι η σχέση κοινότητας-τόπου που χτίζεται με τα χρόνια.»<br/>— Κοινότητα Λαυρακά</div>
-  </div>
 </section>
-<div class="ticker"><div class="ticker-track"><span>ΓΑΥΔΟΣ · ΚΑΤΕΔΑΦΙΣΕΙΣ 22/04/26</span><span>⚪</span><span>ΑΠΕΙΛΕΣ & ΧΕΙΡΟΔΙΚΙΑ ΑΠΟ ΤΟΝ ΑΔΕΡΦΟ ΤΗΣ ΔΗΜΑΡΧΟΥ</span><span>⚪</span><span>ΑΜΑΖΕΥΤΑ ΣΚΟΥΠΙΔΙΑ ΜΕΤΑ ΤΗΝ ΕΠΙΧΕΙΡΗΣΗ</span><span>⚪</span><span>Η ΓΑΥΔΟΣ ΔΕ ΘΑ ΓΙΝΕΙ ΘΕΡΕΤΡΟ</span><span>⚪</span><span>ΦΥΣΙΚΗ ΠΑΡΟΥΣΙΑ ΣΤΟ ΝΗΣΙ</span></div></div>
 
-<!-- MAIN REPORT (PDF BASED) -->
-<section class="featured-sec" id="keimena">
-  <div class="container">
-    <div class="featured-grid">
-      <div>
-        <div class="feat-kicker">Αναλυτική καταγγελία · 22 Απριλίου 2026</div>
-        <h2 class="feat-title">Γαύδος: αναντίστοιχη βία, αυθαιρεσία εξουσίας και η σιωπή της τοπικής αρχής</h2>
-        <p class="feat-lede">Στη Γαύδο, ΜΑΤ πλήρους εξάρτυσης με το συνεργείο της Βασιλάκης Μιχαήλ και παρουσία εισαγγελέα κατεδάφισαν καλύβια από φυσικά υλικά που ξεβράζει η θάλασσα. Άνθρωποι που κατοικούσαν εκεί δεκαετίες έμειναν άστεγοι, απειλήθηκαν με συλλήψεις και δεν τους δόθηκε καμία επιλογή αντίδρασης.</p>
-        <p class="feat-body">Η Αποκεντρωμένη Διοίκηση Κρήτης και ο Δήμος Γαύδου έκαναν λόγο για «περιβαλλοντική καταστροφή», αλλά η απόφαση εκκένωσης-κατεδάφισης δεν πέρασε ποτέ από δημόσια διαβούλευση. Ο δήμος δεν εκπόνησε σχέδιο μετεγκατάστασης, ενώ το συνεργείο άφησε πίσω <strong>αμάζευτα σκουπίδια</strong>, προκαλώντας πραγματική ρύπανση. Η δήμαρχος Αίτιαν Στεφανάκη, που αρχικά δήλωνε αναρμόδια, εμφανίστηκε μαζί με τον αδερφό της για να εποπτεύσει την κατεδάφιση. Ο αδερφός της απείλησε ότι θα θάψει όποιον αντιστέκεται «κάτω από τη γη» και χειροδίκησε σε άτομο που ζητούσε εξηγήσεις.</p>
-        <p class="feat-body">Παράλληλα, το Υπουργείο Περιβάλλοντος, την ίδια περίοδο, κατέθεσε νομοσχέδιο που νομιμοποιεί αυθαίρετες τουριστικές εγκαταστάσεις σε δάση και περιοχές Natura, εισάγοντας «τεκμήριο συμβατότητας» για έργα ΑΠΕ. <strong>Νομιμοποιούν ό,τι χτίζεται για τουρισμό, κατεδαφίζουν όσους απλώς ζουν εκτός αγοράς.</strong></p>
-        <div class="art-meta"><span>📆 22 Απριλίου 2026</span><span>✍️ Πρωτοβουλία Αθήνας για την Γαύδο</span><span>📍 Λαυρακάς, Αη Γιάννης</span></div>
-        <a href="#" class="btn btn-red">Κατέβασε την πλήρη ανακοίνωση (pdf)</a>
+<main class="container">
+  <!-- ΚΑΤΑΓΓΕΛΙΑ section -->
+  <section id="kataggelia" style="scroll-margin-top: 80px;">
+    <div class="section-sub">Αναλυτική μαρτυρία</div>
+    <h2 class="section-title">22 Απριλίου 2026: επιχείρηση κατεδάφισης χωρίς νομική βάση</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p style="margin-bottom: 1rem;">Στη Γαύδο, ΜΑΤ πλήρους εξάρτυσης με το συνεργείο της Βασιλάκης Μιχαήλ και παρουσία εισαγγελέα κατεδάφισαν αυτοσχέδιες καλύβες. Οι κάτοικοι απειλήθηκαν με συλλήψεις και δεν τους δόθηκε καμία επιλογή να αντιδράσουν. Οι κατασκευές ήταν από ξύλα και υλικά που ξεβράζει η θάλασσα, μέχρι 5τμ, με μηδενικό περιβαλλοντικό αποτύπωμα.</p>
+        <p>Η Αποκεντρωμένη Διοίκηση Κρήτης και ο Δήμος Γαύδου έκαναν λόγο για «περιβαλλοντική καταστροφή» – όμως <strong>η απόφαση δεν τέθηκε ποτέ σε δημόσια διαβούλευση</strong> και δεν υπήρξε σχέδιο μετεγκατάστασης. Το συνεργείο άφησε πίσω αμάζευτα σκουπίδια, προκαλώντας πραγματική ρύπανση.</p>
+        <p style="margin-top: 1rem;">Η δήμαρχος Αίτιαν Στεφανάκη, που αρχικά δήλωνε αναρμόδια, εμφανίστηκε με τον αδερφό της για να εποπτεύσει την κατεδάφιση. Ο αδερφός της απείλησε ότι «θα θάψει όποιον αντιστέκεται κάτω από τη γη» και χειροδίκησε σε πολίτη που ζητούσε εξηγήσεις.</p>
       </div>
+      <div class="card">
+        <div class="badge">Αυθαιρεσία σε πλήρη έκταση</div>
+        <ul class="fact-list">
+          <li>❌ Καμία επίδοση εγγράφου κατεδάφισης σε Λαυρακά και Αη Γιάννη.</li>
+          <li>👊 Απειλές & χειροδικία από τον αδερφό της δημάρχου.</li>
+          <li>🗑️ Το συνεργείο εγκατέλειψε σκουπίδια – ειρωνεία για την «προστασία της φύσης».</li>
+          <li>🚿 2021: η ίδια δήμαρχος είχε εγκαταστήσει ντουζιέρες με κερματοδέκτες στην παραλία.</li>
+          <li>📜 Ταυτόχρονο νομοσχέδιο Υπ. Περιβάλλοντος: νομιμοποίηση τουριστικών αυθαιρέτων σε δάση & Natura.</li>
+        </ul>
+        <p style="margin-top: 1rem; font-size: 0.85rem;"><strong>Νομιμοποιούν αν χτίζεις για τουρισμό – κατεδαφίζουν αν απλώς ζεις εκτός αγοράς.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ΚΟΙΝΟΤΗΤΑ (community self-organisation) -->
+  <section id="koinothta" style="scroll-margin-top: 80px;">
+    <div class="section-sub">Αυτοοργάνωση & Αντίσταση</div>
+    <h2 class="section-title">Η κοινότητα Λαυρακά κάνει ό,τι δεν κάνει ο Δήμος</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌿</div>
+        <h3>Οικολογική γνώση & δράση</h3>
+        <p>Οι κάτοικοι γνωρίζουν πώς αναπτύσσονται οι κέδροι, συλλέγουν σκουπίδια ναυλώνοντας βάρκες κάθε καλοκαίρι, έχουν αγοράσει πυροσβεστήρες και οργανώνουν πυρασφάλεια. «Κλαίμε με το σπάσιμο ενός μικρού κλαδιού».</p>
+      </div>
+      <div class="card">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏥</div>
+        <h3>Υγεία: γιατρός απομακρύνθηκε</h3>
+        <p>Ο μοναδικός γιατρός του νησιού <strong>απομακρύνθηκε</strong> επειδή κατήγγειλε μόλυνση νερού. Το καλοκαίρι του 2024 η Γαύδος περιήλθε σε τοπική επιδημία γαστρεντερίτιδας. Η κοινότητα προσέφερε πρώτες βοήθειες, ο δήμος απών.</p>
+      </div>
+      <div class="card">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚰</div>
+        <h3>Εγκατάλειψη – προπομπός εκμετάλλευσης</h3>
+        <p>Χειμώνας χωρίς υγειονομική κάλυψη, ακανόνιστες ακτοπλοϊκές συνδέσεις. Η εγκατάλειψη σχεδιάζεται για να παραδοθούν οι τόποι σε επενδύσεις. Το πατριωτικό αφήγημα για τα ακριτικά νησιά καταρρέει.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ΘΕΣΕΙΣ (manifesto) -->
+  <section id="theseis" style="scroll-margin-top: 80px;">
+    <div class="section-sub">Οι θέσεις μας</div>
+    <h2 class="section-title">Δεν θα γίνουμε τουριστικό θέρετρο</h2>
+    <div class="card" style="background: #fefaf5; margin-top: 1rem;">
+      <p style="font-size: 1.05rem; font-style: italic; margin-bottom: 1.5rem;">«Μέρη σαν τη Γαύδο έγιναν καταφύγια. Τόποι όπου αλλάζει ο ρυθμός, η σχέση με τον άλλον, η σχέση με τη γη. Αυτό δεν συγχωρείται από την αγορά.»</p>
+      <ul style="list-style: none;">
+        <li style="margin-bottom: 0.8rem;">✓ Καταδικάζουμε τις κατεδαφίσεις ως πολιτική επιλογή, όχι νομική αναγκαιότητα.</li>
+        <li style="margin-bottom: 0.8rem;">✓ Καταδικάζουμε το νομοσχέδιο που νομιμοποιεί τουριστικές αυθαιρεσίες σε δασικές εκτάσεις Natura.</li>
+        <li style="margin-bottom: 0.8rem;">✓ Στεκόμαστε στο πλευρό της κοινότητας του Λαυρακά και όσων αντιστέκονται.</li>
+        <li style="margin-bottom: 0.8rem;">✓ Η Γαύδος δε θα γίνει θέρετρο για πλούσιους, ούτε βάση εξορύξεων ή στρατιωτικών επιχειρήσεων.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ΕΚΔΗΛΩΣΕΙΣ -->
+  <section id="events" style="scroll-margin-top: 80px;">
+    <div class="section-sub">Συναντήσεις & δράσεις</div>
+    <h2 class="section-title">Επόμενα βήματα</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
       <div>
-        <div class="fact-box">
-          <div class="fact-box-head">ΒΙΑΙΕΣ ΚΑΤΕΔΑΦΙΣΕΙΣ – ΤΑ ΓΕΓΟΝΟΤΑ</div>
-          <ul class="fact-list">
-            <li>❌ Καμία δημόσια διαβούλευση – καμία νομική επίδοση εγγράφου κατεδάφισης σε Λαυρακά και Αη Γιάννη.</li>
-            <li>👊 Ο αδερφός της δημάρχου απείλησε (θα σε θάψω) και χειροδίκησε σε πολίτη.</li>
-            <li>🗑️ Το συνεργείο κατεδάφισης εγκατέλειψε αμάζευτα σκουπίδια, δήθεν για περιβαλλοντική προστασία.</li>
-            <li>🚿 2021: Η Στεφανάκη είχε εγκαταστήσει ντουζιέρες με κερματοδέκτες – εμπορευματοποίηση της ακτής.</li>
-            <li>📜 Ταυτόχρονα: νομοσχέδιο Υπ. Περιβάλλοντος για νομιμοποίηση τουριστικών αυθαιρέτων σε δασικές εκτάσεις.</li>
-          </ul>
+        <div class="event-item">
+          <div class="event-date"><span class="day">18</span><br><span class="month">Μαΐ</span></div>
+          <div><strong>Ανοιχτή Συνέλευση Πρωτοβουλίας</strong><br>Αθήνα – Στέγη Γραμμάτων, 19:00<br><span style="font-size: 0.75rem;">Συντονισμός αποστολής στη Γαύδο</span></div>
         </div>
-        <div class="quote-box">
-          <blockquote>«Νομιμοποιεί αν χτίζεις για τουρισμό — κατεδαφίζει αν απλώς ζεις εκεί. Η Γαύδος δεν εμφανίστηκε τυχαία στο στόχαστρο.»</blockquote>
-          <cite>— Πρωτοβουλία Αθήνας για την Γαύδο</cite>
+        <div class="event-item">
+          <div class="event-date"><span class="day">24</span><br><span class="month">Μαΐ</span></div>
+          <div><strong>Προβολή ντοκιμαντέρ για τη Γαύδο & συζήτηση</strong><br>Ταινιοθήκη Ελλάδος, 20:30</div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="day">07</span><br><span class="month">Ιουν</span></div>
+          <div><strong>Συλλογική μετάβαση στη Γαύδο</strong><br>Λαυρακάς & Σαρακήνικο – φυσική παρουσία</div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="day">20</span><br><span class="month">Ιουν</span></div>
+          <div><strong>Ημερίδα: Κοινά αγαθά, τουριστικοποίηση, αντίσταση</strong><br>Αθήνα – χώρος ανακοινώνεται</div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMMUNITY SELF-ORGANISATION (doctor wording: απομακρύνθηκε) -->
-<section class="posts-sec" id="koinothta">
-  <div class="container">
-    <div class="sec-head"><div><span class="sec-kicker">Αυτοοργάνωση & Αντίσταση</span><div class="sec-title">Η κοινότητα Λαυρακά δεν είναι παθητική</div></div><a href="#" class="sec-more">Όλες οι αναφορές →</a></div>
-    <div class="posts-grid">
-      <div class="post-card"><div class="card-img-ph">🌊</div><div class="card-kicker">ΠΕΡΙΒΑΛΛΟΝ & ΦΡΟΝΤΙΔΑ</div><h3>«Κλαίμε με το σπάσιμο ενός κλαδιού»</h3><p>Η κοινότητα γνωρίζει την ανάπτυξη των κέδρων, συλλέγει σκουπίδια ναυλώνοντας βάρκες, έχει αγοράσει πυροσβεστήρες και οργανώνει πυρασφάλεια. Ζωντανή οικολογική γνώση που δεν καταγράφεται σε μελέτες.</p><div class="card-date">από την καθημερινή παρατήρηση</div></div>
-      <div class="post-card"><div class="card-img-ph">🏥</div><div class="card-kicker">ΥΓΕΙΑ & ΕΓΚΑΤΑΛΕΙΨΗ</div><h3>Γιατρός απομακρύνθηκε – επιδημία γαστρεντερίτιδας</h3><p>Ο μοναδικός γιατρός απομακρύνθηκε επειδή κατήγγειλε μόλυνση νερού. Καλοκαίρι 2024 το νησί περιήλθε σε τοπική επιδημία. Ο δήμος απών. Η κοινότητα προσέφερε πρώτες βοήθειες.</p><div class="card-date">Αποκάλυψη 2026</div></div>
-      <div class="post-card"><div class="card-img-ph">🚰</div><div class="card-kicker">ΥΠΟΔΟΜΕΣ & ΑΠΟΚΛΕΙΣΜΟΣ</div><h3>Χειμώνας στη Γαύδο: εγκατάλειψη σχεδιασμένη</h3><p>Ελλιπής υγειονομική κάλυψη, ακανόνιστες συνδέσεις, απουσία κράτους. Η εγκατάλειψη προηγείται της εκμετάλλευσης: το πατριωτικό αφήγημα καταρρέει.</p><div class="card-date">από την κοινότητα</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- MANIFESTO (light tone) -->
-<section class="manifesto-sec">
-  <div class="container"><div class="manifesto-inner">
-    <div class="sec-head"><div><span class="sec-kicker">Η θέση μας</span><div class="sec-title">Καταδικάζουμε, δεν σιωπούμε</div></div></div>
-    <p class="manifesto-body">«Η Γαύδος είχε γίνει καταφύγιο: τόπος όπου αλλάζει η σχέση με τον άλλον, με το συλλογικό, χωρίς διαχειριστή από τα πάνω. Αυτό δεν συγχωρείται από την αγορά. Η ελευθερία κατοίκησης, η ελευθερία της ακτής – εφόσον δεν καταναλώνεις – εξαφανίζεται.»</p>
-    <ul class="demands">
-      <li>Καταδικάζουμε τις κατεδαφίσεις ως πολιτική επιλογή, όχι νομική αναγκαιότητα.</li>
-      <li>Καταδικάζουμε τη νομοθετική ανατροπή που ανοίγει δάση και Natura σε τουριστικές επενδύσεις.</li>
-      <li>Στεκόμαστε στο πλευρό της κοινότητας του Λαυρακά και όσων αντιστέκονται.</li>
-      <li>Η Γαύδος δε θα γίνει θέρετρο για πλούσιους – ούτε βάση εξορύξεων ή στρατιωτικών επιχειρήσεων.</li>
-    </ul>
-    <a href="#draseis" class="btn btn-red">Συμμετέχω στη δράση</a>
-  </div></div>
-</section>
-
-<!-- EVENTS (refugee block removed) -->
-<section class="events-sec" id="events">
-  <div class="container">
-    <div class="events-layout">
-      <div><div class="sec-head"><div><span class="sec-kicker">Συνελεύσεις & παρεμβάσεις</span><div class="sec-title">Επόμενες δράσεις</div></div></div>
-        <div class="event-item"><div class="ev-date"><span class="day">18</span><span class="mth">Μαΐ</span></div><div class="ev-body"><h3>Ανοιχτή Συνέλευση – Αθήνα</h3><div class="ev-where">Στέγη Γραμμάτων, 19:00 · Οργάνωση αποστολής στη Γαύδο</div></div></div>
-        <div class="event-item"><div class="ev-date"><span class="day">24</span><span class="mth">Μαΐ</span></div><div class="ev-body"><h3>Προβολή: «Λαυρακάς – η άλλη οικολογία» & συζήτηση</h3><div class="ev-where">Ταινιοθήκη Ελλάδος, 20:30</div></div></div>
-        <div class="event-item"><div class="ev-date"><span class="day">07</span><span class="mth">Ιουν</span></div><div class="ev-body"><h3>Συλλογική μετάβαση στη Γαύδο – φυσική παρουσία</h3><div class="ev-where">Λαυρακάς & Σαρακήνικο · ενημέρωση για ακτοπλοϊκά</div></div></div>
-        <div class="event-item"><div class="ev-date"><span class="day">20</span><span class="mth">Ιουν</span></div><div class="ev-body"><h3>Ημερίδα: «Κοινά αγαθά, τουριστικοποίηση, αντίσταση»</h3><div class="ev-where">χώρος: ΕΜΠ (αίθουσα εκδηλώσεων)</div></div></div>
-      </div>
-      <div>
-        <div class="sidebar-blk"><div class="sidebar-blk-title">Λέξεις-κλειδιά</div><div class="tag-cloud"><a href="#" class="tag">Κατεδαφίσεις Γαύδου</a><a href="#" class="tag">Λαυρακάς</a><a href="#" class="tag">Πράσινος καπιταλισμός</a><a href="#" class="tag">ΜΑΤ</a><a href="#" class="tag">Αυτοοργάνωση</a><a href="#" class="tag">Νομοσχέδιο Natura</a><a href="#" class="tag">Στεφανάκη</a><a href="#" class="tag">savegavdos</a></div></div>
-        <div class="sidebar-blk"><div class="sidebar-blk-title">Ενημερωτικό δελτίο</div><p style="margin-bottom:0.6rem; font-size:0.8rem;">Καταγγελίες, καλέσματα, νέα από το νησί.</p><div class="sub-form" style="display:flex; gap:0.5rem; flex-wrap:wrap;"><input placeholder="email" style="flex:1;padding:0.5rem; border:1px solid var(--border-light); border-radius: 2rem;"><button style="background:var(--accent); color:white; border:none; padding:0.5rem 1rem; border-radius:2rem;">Εγγραφή</button></div></div>
+      <div class="card">
+        <div class="badge">Newsletter</div>
+        <p style="margin-bottom: 1rem;">Μείνετε ενημερωμένοι για νέες καταγγελίες, καλέσματα και πολιτικές εξελίξεις.</p>
+        <input type="email" placeholder="το email σας" style="width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 2rem; margin-bottom: 0.8rem;">
+        <button class="btn" style="width: 100%; text-align: center;">Εγγραφή</button>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ACTIONS (3 steps) -->
-<section class="actions-sec" id="draseis">
-  <div class="container"><div class="sec-head"><div><span class="sec-kicker">Άμεση δράση</span><div class="sec-title">Τι μπορείς να κάνεις τώρα</div></div></div>
-    <div class="actions-grid">
-      <div class="action-card"><div class="action-num">01</div><h3>🚢 Φυσική παρουσία στη Γαύδο</h3><p>Η ορατότητα αποτρέπει νέες αυθαιρεσίες. Καλούμε όποια/ο μπορεί να ταξιδέψει άμεσα στο νησί – συλλογικές μετακινήσεις μέσω πρωτοβουλίας.</p><a href="#" class="action-lnk">Λεπτομέρειες ταξιδιού →</a></div>
-      <div class="action-card"><div class="action-num">02</div><h3>📢 Διάδοση & εκκωφαντική σιωπή</h3><p>Μοιράσου την καταγγελία, άρθρα, βίντεο. Σπάμε την τοπική σιωπή που στηρίζει τους τοπικούς άρχοντες μέσω ρουσφετιών και απειλών.</p><a href="#" class="action-lnk">Υλικό για διαμοιρασμό →</a></div>
-      <div class="action-card"><div class="action-num">03</div><h3>🤝 Ένταξη στην Πρωτοβουλία Αθήνας</h3><p>Καλούμε κατοίκους Αθήνας, ντόπιους/ες, νομικές και ιατρικές ομάδες. Συντονισμός, υποστήριξη, δράσεις αλληλεγγύης.</p><a href="#" class="action-lnk">Συμμετοχή/εθελοντισμός →</a></div>
+  <hr>
+
+  <!-- ΔΡΑΣΕΙΣ + ΣΥΜΜΕΤΟΧΗ -->
+  <section id="draseis" style="scroll-margin-top: 80px;">
+    <div class="section-sub">Τώρα, εδώ</div>
+    <h2 class="section-title">Τι μπορείς να κάνεις</h2>
+    <div class="grid-3" style="margin-bottom: 2rem;">
+      <div class="action-step">
+        <div class="action-num">01</div>
+        <h3>🚢 Φυσική παρουσία στο νησί</h3>
+        <p>Η ορατότητα αποτρέπει νέες βίαιες επιχειρήσεις. Καλούμε όσους/ες μπορούν να ταξιδέψουν στη Γαύδο – συλλογικές μετακινήσεις μέσω της Πρωτοβουλίας.</p>
+        <a href="#" style="color:#c2410c; font-weight: 500;">Πληροφορίες μετάβασης →</a>
+      </div>
+      <div class="action-step">
+        <div class="action-num">02</div>
+        <h3>📢 Διάδοση – σπάμε τη σιωπή</h3>
+        <p>Η εκκωφαντική σιωπή ντόπιων που εξαρτώνται από ρουσφέτια και τοπική εξουσία τροφοδοτεί την αυθαιρεσία. Μοιράσου το κείμενο, τις μαρτυρίες, τις φωτογραφίες.</p>
+        <a href="#" style="color:#c2410c; font-weight: 500;">Υλικό για διαμοιρασμό →</a>
+      </div>
+      <div class="action-step">
+        <div class="action-num">03</div>
+        <h3>🤝 Γίνε μέλος της Πρωτοβουλίας</h3>
+        <p>Καλούμε κατοίκους Αθήνας, ντόπιους Γαύδου, νομικές και ιατρικές ομάδες. Συντονισμός, αλληλεγγύη, άμεση υποστήριξη στην κοινότητα.</p>
+        <a href="mailto:protovoulliaathinasgavdo@proton.com" style="color:#c2410c; font-weight: 500;">Επικοινωνία →</a>
+      </div>
     </div>
-  </div>
-</section>
+    <div class="card" style="background: #f1f5f9; text-align: center;">
+      <p style="font-weight: 600;">📧 Για συμμετοχή, εθελοντισμό ή απορίες:</p>
+      <p style="font-family: monospace; font-size: 1rem; background: white; display: inline-block; padding: 0.3rem 1.2rem; border-radius: 2rem; margin-top: 0.5rem;">protovoulliaathinasgavdo@proton.com</p>
+    </div>
+  </section>
 
-<!-- GALLERY -->
-<section class="gallery-sec" id="gallery"><div class="container"><div class="sec-head"><div><span class="sec-kicker">Οπτικό αρχείο</span><div class="sec-title">Εικόνες από τον Λαυρακά</div></div></div></div>
-<div class="gallery-scroll"><div class="g-item">🏝️<span>Καλύβια από φυσικά υλικά</span></div><div class="g-item">🏚️<span>Κατεδάφιση χωρίς έγγραφο</span></div><div class="g-item">🌊<span>Ακτή Σαρακήνικο</span></div><div class="g-item">🗑️<span>Σκουπίδια που άφησε το συνεργείο</span></div><div class="g-item">🕊️<span>Συλλογική φροντίδα</span></div><div class="g-item">🌅<span>Ηλιοβασίλεμα Γαύδος</span></div></div>
-</section>
+  <hr>
+
+  <!-- ΓΚΑΛΕΡΙ (με pic1.jpg, pic2.jpg ...) -->
+  <section style="margin: 2rem 0 3rem;">
+    <div class="section-sub">Οπτικό υλικό</div>
+    <h2 class="section-title">Φωτογραφίες από τη Γαύδο</h2>
+    <div class="gallery">
+      <img src="pic1.jpg" alt="Καλύβια από φυσικά υλικά, Λαυρακάς" onerror="this.style.opacity=0.4">
+      <img src="pic2.jpg" alt="ΜΑΤ και συνεργείο κατεδάφισης - 22/04/26" onerror="this.style.opacity=0.4">
+      <img src="pic3.jpg" alt="Τα σκουπίδια που άφησε το συνεργείο μετά την κατεδάφιση" onerror="this.style.opacity=0.4">
+      <img src="pic4.jpg" alt="Η κοινότητα καθαρίζει και προστατεύει την ακτή" onerror="this.style.opacity=0.4">
+      <img src="pic5.jpg" alt="Αυτοσχέδιες κατοικίες από ξύλα και δίχτυα" onerror="this.style.opacity=0.4">
+      <img src="pic6.jpg" alt="Ηλιοβασίλεμα στο Σαρακήνικο, Γαύδος" onerror="this.style.opacity=0.4">
+    </div>
+    <p style="font-size: 0.7rem; color: #6b7280; margin-top: 0.5rem;">※ Οι φωτογραφίες θα προστεθούν σύντομα. Ονόματα αρχείων: pic1.jpg έως pic6.jpg.</p>
+  </section>
+</main>
 
 <footer>
-  <div class="container"><div class="footer-grid"><div class="f-brand"><a href="#" class="site-logo">savegavdos.net<em>Ανεξάρτητη πρωτοβουλία πολιτών</em></a><p class="f-desc">Η γη δεν είναι εμπόρευμα. Η ελευθερία δεν μετριέται σε νόμιμα τετραγωνικά. Καμία χρηματοδότηση από κόμματα ή επιχειρήσεις.</p></div>
-    <div class="f-col"><h4>Περιεχόμενο</h4><ul><li><a href="#">Κείμενο-μαρτυρία</a></li><li><a href="#">Νομοθετική ανατροπή</a></li><li><a href="#">Αρχείο εκδηλώσεων</a></li></ul></div>
-    <div class="f-col"><h4>Δράσεις</h4><ul><li><a href="#">Ταξίδι στη Γαύδο</a></li><li><a href="#">Υλική αλληλεγγύη</a></li><li><a href="#">Αφίσα & υλικό</a></li></ul></div>
-    <div class="f-col"><h4>Επικοινωνία</h4><ul><li><a href="#">gavdos.solidarity@riseup.net</a></li><li><a href="#">Σχετικά</a></li><li><a href="#">Τύπος</a></li></ul></div>
-  </div><div class="footer-bottom"><span>© 2026 · savegavdos.net – Πρωτοβουλία Αθήνας για την Γαύδο</span><div class="social-row"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Email</a></div></div></div>
+  <div class="container footer-flex">
+    <div>
+      <p style="font-weight: 700;">savegavdos.net</p>
+      <p style="font-size: 0.75rem; max-width: 280px;">Ανεξάρτητη πρωτοβουλία πολιτών. Καμία χρηματοδότηση από κόμματα ή επιχειρήσεις. Η γη δεν είναι εμπόρευμα.</p>
+    </div>
+    <div>
+      <p style="font-weight: 600;">Επικοινωνία</p>
+      <p class="email-link">protovoulliaathinasgavdo@proton.com</p>
+    </div>
+    <div>
+      <p style="font-weight: 600;">Ακολουθήστε</p>
+      <p>Instagram / Facebook (σύντομα)</p>
+    </div>
+  </div>
+  <div class="container" style="text-align: center; margin-top: 1.5rem; font-size: 0.7rem; border-top: 1px solid #e2e8f0; padding-top: 1rem;">
+    © 2026 Πρωτοβουλία Αθήνας για την Γαύδο – Αλληλεγγύη στην κοινότητα Λαυρακά
+  </div>
 </footer>
+
 </body>
 </html>
